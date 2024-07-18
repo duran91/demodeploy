@@ -30,6 +30,7 @@ jobs:
             --publish
 
   autodeploy:
+    needs: build_and_publish
     runs-on: ubuntu-latest
     env:
       FLY_API_TOKEN: ${{ secrets.FLY_API_AUTH_TOKEN }}
