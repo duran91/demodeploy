@@ -14,6 +14,13 @@ jobs:
           registry: ghcr.io
           username: ${{github.actor}}
           password: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
+
+      - name: Install Pack CLI
+        run: |
+          sudo add-apt-repository ppa:cncf-buildpacks/pack-cli
+          sudo apt-get update
+          sudo apt-get install pack-cli
+
       - name: Push Image
         run: |
           pack build ghcr.io/duran91/demodeploy:latest \
