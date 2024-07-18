@@ -29,4 +29,14 @@ jobs:
             --env "BP_OCI_SOURCE=https://github.com/duran91/demodeploy" \
             --publish
 
+  autodeploy:
+    runs-on: ubuntu-latest
+    env:
+      FLY_API_TOKEN: ${{ secrets.FLY_API_AUTH_TOKEN }}
+    steps:
+      - name: Install flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Deploy code
+        run: flyctl deploy --image ghcr.io/duran91/demodeploy:latest
+
 
