@@ -14,14 +14,12 @@ jobs:
           registry: ghcr.io
           username: ${{github.actor}}
           password: ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }}
-#      - name: Build and push the image
-#        run: |
-#          echo ${{ secrets.GH_PERSONAL_ACCESS_TOKEN }} | docker login ghcr.io -u ${{github.actor}} --password-stdi
-##          docker login --username USERNAME --password ${{ secrets.GIT_HUB_PERSONAL_ACCESS_TOKEN }}
-#          pack build ghcr.io/duran91/demodeploy:latest \
-#            --builder paketobuildpacks/builder:base \
-#            --path . \
-#            --env "BP_OCI_SOURCE=https://github.com/duran91/demodeploy" \
-#            --publish
+      - name: Push Image
+        run: |
+          pack build ghcr.io/duran91/demodeploy:latest \
+            --builder paketobuildpacks/builder:base \
+            --path . \
+            --env "BP_OCI_SOURCE=https://github.com/duran91/demodeploy" \
+            --publish
 
 
