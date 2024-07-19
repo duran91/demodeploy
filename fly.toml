@@ -1,12 +1,13 @@
 # fly.toml file generated for spring-boot-flyio on 2022-09-14T11:37:49+02:00
 
 app = "demo-deploy"
-kill_signal = "SIGINT"
-kill_timeout = 5
-processes = []
+#kill_signal = "SIGINT"
+#kill_timeout = 5
+#processes = []
+
 
 [build]
-    image = "ghcr.io/duran91/demo-deploy:latest"
+    builder = "paketobuildpacks/builder:base"
 
 #[env]
 #
@@ -14,9 +15,6 @@ processes = []
 #    allowed_public_ports = []
 #    auto_rollback = true
 #
-#[[services]]
-#    http_checks = []
-#    internal_port = 8098
 #    processes = ["app"]
 #    protocol = "tcp"
 #    script_checks = []
@@ -24,7 +22,7 @@ processes = []
 #        hard_limit = 25
 #        soft_limit = 20
 #        type = "connections"
-#
+##
 #[[services.ports]]
 #    handlers = ["http"]
 #    port = 80
