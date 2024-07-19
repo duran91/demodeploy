@@ -1,0 +1,4 @@
+app = "demo-deploy"
+[[services]]
+    http_checks = []
+    internal_port = 8098
