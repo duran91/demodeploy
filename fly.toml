@@ -1,1 +1,5 @@
-app = "demodeploy"
+name = "demo-deploy-9101"
+
+[build]
+    builder = "paketobuildpacks/builder:base"
+    image = "ghcr.io/duran91/demodeploy:latest"
