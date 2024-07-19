@@ -1,4 +1,4 @@
-name = "demo-deploy-9101"
+app = "demo-deploy-9101"
 
 [build]
     builder = "paketobuildpacks/builder:base"
