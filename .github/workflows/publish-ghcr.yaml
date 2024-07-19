@@ -38,6 +38,6 @@ jobs:
       - name: Install flyctl
         uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Deploy code
-        run: flyctl deploy --image ghcr.io/duran91/demodeploy:latest -a demo-deploy
+        run: flyctl deploy --image ghcr.io/duran91/demodeploy:latest
 
 
